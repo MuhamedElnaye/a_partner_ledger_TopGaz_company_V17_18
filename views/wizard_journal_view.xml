@@ -1,0 +1,22 @@
+<odoo>
+    <record id="view_journal_detail_wizard" model="ir.ui.view">
+        <field name="name">journal.detail.wizard.form</field>
+        <field name="model">journal.detail.wizard</field>
+        <field name="arch" type="xml">
+            <form string="تفاصيل الجورنال">
+                <group>
+                    <field name="journal_id" readonly="1"/>
+                </group>
+                <field name="move_line_ids">
+                    <list editable="bottom">
+                        <field name="name"/>
+                        <field name="partner_id"/>
+                        <field name="debit"/>
+                        <field name="credit"/>
+                        <field name="amount_currency"/>
+                    </list>
+                </field>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_journal_detail_wizard,journal_detail_wizard,model_journal_detail_wizard,base.group_user,1,1,1,1
+access_journal_ledger_line,journal_ledger_line,model_journal_ledger_line,base.group_user,1,1,1,1
+access_journal_detail_line,journal_detail_line,model_journal_detail_line,base.group_user,1,1,1,1

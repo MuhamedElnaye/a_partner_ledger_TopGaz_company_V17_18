@@ -1,0 +1,47 @@
+<odoo>
+    <data>
+        <record id="view_journal_ledger_list" model="ir.ui.view">
+            <field name="name">journal.ledger.line.list</field>
+            <field name="model">journal.ledger.line</field>
+            <field name="arch" type="xml">
+                <list default_order="debit desc" decoration-danger="balance &lt; 0">
+                    <field name="partner_id"/>
+                    <field name="journal_id"/>
+                    <field name="debit"/>
+                    <field name="credit"/>
+                    <field name="balance" widget="monetary" optional="True"/>
+                    <field name="positive_balance" />
+                    <field name="negative_balance"/>
+                    <field name="currency_id"  />
+                    <button name="open_journal_detail" type="object" string="تفاصيل" icon="fa-eye"/>
+                </list>
+            </field>
+        </record>
+      <record id="view_journal_ledger_search" model="ir.ui.view">
+            <field name="name">journal.ledger.line.search</field>
+            <field name="model">journal.ledger.line</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="partner_id"/>
+                    <field name="journal_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_journal_ledger" model="ir.actions.act_window">
+            <field name="name">Custom Journal Ledger</field>
+            <field name="res_model">journal.ledger.line</field>
+            <field name="view_mode">list</field>
+        </record>
+        <menuitem
+                id="menu_journal_ledger_root"
+                name="Custom Reports"
+                parent="accountant.menu_accounting"/>
+
+        <menuitem
+                id="menu_journal_ledger"
+                name="Journal Ledger"
+                parent="menu_journal_ledger_root"
+                action="action_journal_ledger"/>
+    </data>
+</odoo>
